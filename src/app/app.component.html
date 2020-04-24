@@ -1,0 +1,45 @@
+<h1>HELLO WORLD</h1>
+<h1>THIS IS AMAZING</h1>
+<h2>
+  {{ mensaje }}
+</h2>
+<cursos></cursos>
+
+
+<h1>{{ nombre }}</h1>
+<h1>{{ 'Mi nombre es '+getNombre() }}</h1>
+<imgboton></imgboton>
+<aulas></aulas><br>
+<label>USO DE DEPENDECY INJECTION (con DEPENDENCY INJECTION)</label><br>
+<ul>
+	<li *ngFor="let persona of personas">
+		{{ persona.nombre }}
+	</li>
+
+</ul>
+<br>
+<label>USO DE REACTIVE FORMS</label><br>
+<div class="container">
+	<form [formGroup]="miFormulario">
+		usuario: <input [class.is-invalid]="miFormulario.get('username').touched && miFormulario.get('username').invalid" type="text" class="form-control" formControlName="username"><br>
+		password: <input [class.is-invalid]="miFormulario.get('userpassword').touched && miFormulario.get('userpassword').invalid" type="password" class="form-control" formControlName="userpassword"><br>
+		<button class="btn btn-primary" type="submit">Enviar</button>
+	</form>
+	{{miFormulario.value | json}}
+	
+</div><br>
+<label>CONTENT PROJECTION</label>
+<br>
+
+<div class="container">
+		<app-mensaje>
+			<h1>HOLA MUNDO</h1>
+			<button class="btn btn-primary">Hazme Click</button>
+			<div>Este es un Div</div>
+			<p>Mensaje desde el componente App </p>
+
+		</app-mensaje>
+</div>
+
+
+
